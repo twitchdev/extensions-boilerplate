@@ -1,0 +1,11 @@
+.LiveConfigPage {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.LiveConfigPage-light{
+    color:#232127;
+}
+
+.LiveConfigPage-dark{
+    color:#e5e3e8;
+}
