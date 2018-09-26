@@ -96,14 +96,13 @@ module.exports = (_env,argv)=> {
     plugins
   }
   if(argv.mode==='development'){
-    let https = argv.devrig ? true : {
-      key:fs.readFileSync(path.resolve(__dirname,'conf/server.key')),
-      cert:fs.readFileSync(path.resolve(__dirname,'conf/server.crt'))
-    }
     config.devServer = {
       contentBase: path.join(__dirname,'public'),
       host:argv.devrig ? 'localhost.rig.twitch.tv' : 'localhost',
-      https,
+      https:{
+        key:fs.readFileSync(path.resolve(__dirname,'conf/server.key')),
+        cert:fs.readFileSync(path.resolve(__dirname,'conf/server.crt'))
+      },
       headers: {
         'Access-Control-Allow-Origin': '*'
       },
