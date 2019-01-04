@@ -16,6 +16,13 @@ If you opt to use `npm`, simply replace all mentions of `yarn` below with `npm r
 
 ## First time Usage
 
+### [Developer Rig](https://github.com/twitchdev/developer-rig) Usage
+
+If you are using the developer rig and have used this as your basis for your extension, please ignore the below steps- the developer rig has taken care of it for you! 
+
+### Local Development
+
+If you're wanting to develop this locally, use the below instructions. 
 To use this, simply clone the repository into the folder of your choice. 
 
 For example, to clone this into a `<repo name here>` folder, simply run the following in a commandline interface: 
