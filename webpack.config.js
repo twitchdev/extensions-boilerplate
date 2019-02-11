@@ -1,6 +1,8 @@
 const fs = require('fs')
 const path = require("path")
 const webpack = require("webpack")
+
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 // defines where the bundle file will live
@@ -44,6 +46,7 @@ module.exports = (_env,argv)=> {
 
   // edit webpack plugins here!
   let plugins = [
+    new CleanWebpackPlugin(['dist']),
     new webpack.HotModuleReplacementPlugin()
   ]
 
@@ -65,7 +68,19 @@ module.exports = (_env,argv)=> {
     //entry points for webpack- remove if not used/needed
     entry,
     optimization: {
-      minimize: false // neccessary to pass Twitch's review process
+      minimize: false, // neccessary to pass Twitch's review process
+      splitChunks:{
+        cacheGroups:{
+          default:false,
+          vendors:false,
+          vendor:{
+            chunks:'all',
+            test:/node_modules/,
+            name:false
+          }
+        },
+        name:false
+      }
     },
     module: {
       rules: [
@@ -73,7 +88,7 @@ module.exports = (_env,argv)=> {
           test: /\.(js|jsx)$/,
           exclude: /(node_modules|bower_components)/,
           loader: 'babel-loader',
-          options: { presets: ['env'] }
+          options: { presets: ['env', 'react'] }
         },
         {
           test: /\.css$/,
