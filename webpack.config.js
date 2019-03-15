@@ -69,18 +69,6 @@ module.exports = (_env,argv)=> {
     entry,
     optimization: {
       minimize: false, // neccessary to pass Twitch's review process
-      splitChunks:{
-        cacheGroups:{
-          default:false,
-          vendors:false,
-          vendor:{
-            chunks:'all',
-            test:/node_modules/,
-            name:false
-          }
-        },
-        name:false
-      }
     },
     module: {
       rules: [
@@ -110,6 +98,7 @@ module.exports = (_env,argv)=> {
     },
     plugins
   }
+
   if(argv.mode==='development'){
     config.devServer = {
       contentBase: path.join(__dirname,'public'),
@@ -126,6 +115,20 @@ module.exports = (_env,argv)=> {
       }
     }
   }
+  if(argv.mode==='production'){
+    config.optimization.splitChunks={
+      cacheGroups:{
+        default:false,
+        vendors:false,
+        vendor:{
+          chunks:'all',
+          test:/node_modules/,
+          name:false
+        }
+      },
+      name:false
+    }
+  }  
 
   return config;
 }
