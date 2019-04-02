@@ -76,7 +76,6 @@ module.exports = (_env,argv)=> {
           test: /\.(js|jsx)$/,
           exclude: /(node_modules|bower_components)/,
           loader: 'babel-loader',
-          options: { presets: ['env', 'react'] }
         },
         {
           test: /\.css$/,
