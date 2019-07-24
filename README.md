@@ -16,9 +16,18 @@ If you opt to use `npm`, simply replace all mentions of `yarn` below with `npm r
 
 ## First time Usage
 
-### [Developer Rig](https://github.com/twitchdev/developer-rig) Usage
+### [Developer Rig](https://dev.twitch.tv/docs/extensions/rig/) Usage
 
 If you are using the developer rig and have used this as your basis for your extension, please ignore the below steps- the developer rig has taken care of it for you! 
+
+### Please note that HTTPS only works with the Developer Rig version 1.1.4 and above. 
+
+If you are using a version below that, please either upgrade or disable HTTP. To do so:
+
+1. Go into `/webpack.config.js`
+2. Update `config.devServer.https = true` to `config.devServer.https = false`
+3. On the [Twitch Developer Console](https://dev.twitch.tv/console), make sure to update the Asset Hosting path for your extension to use http instead. 
+4. Refresh your manifest in the Developer Rig and recreate your views. 
 
 ### Local Development
 
@@ -34,10 +43,9 @@ Next, do the following:
 
 1. Change directories into the cloned folder.
 2. Run `yarn install` to install all prerequisite packages needed to run the template. 
-3. Run `yarn cert` to generate the needed certificates. This allows the server to be run over HTTPS vs. HTTP.
-4. Run `yarn start` to run the sample. If everything works, you should be be able to go to the developer rig, create a panel view, and see `Hello world!`
+3. Run `yarn start` to run the sample. If everything works, you should be be able to go to the developer rig, create a panel view, and see `Hello world!`
 
-## Usage
+## Building Production Files
 
 To build your finalized React JS files, simply run `yarn build` to build the various webpacked files. These files will use code splitting to only load in the libraries needed for that view, while still allowing you to reuse components. 
 
@@ -77,14 +85,6 @@ For a small demonstration of the class, see the App compoonent.
 ## File Structure
 
 The file structure in the template is laid out with the following: 
-
-### bin
-
-The `/bin` folder holds the cert generation script. 
-
-### conf 
-
-The `/conf` folder holds the generated certs after the cert generation script runs. If this folder gets emptied, rerun `yarn cert`. 
 
 ### dist
 
