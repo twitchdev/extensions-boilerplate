@@ -107,12 +107,7 @@ module.exports = (_env,argv)=> {
       },
       port: 8080
     }
-    if(fs.existsSync(path.resolve(__dirname,'conf/server.key'))){
-      config.devServer.https = {
-        key:fs.readFileSync(path.resolve(__dirname,'conf/server.key')),
-        cert:fs.readFileSync(path.resolve(__dirname,'conf/server.crt'))
-      }
-    }
+    config.devServer.https = true
   }
   if(argv.mode==='production'){
     config.optimization.splitChunks={
