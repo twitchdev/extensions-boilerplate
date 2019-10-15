@@ -117,3 +117,12 @@ components\
 ```
 
 Each component is under the `components` folder.
+
+# Moving to hosted test
+When you are happy with how your extension looks locally follow these steps to move to a hosted test
+
+1. If your extension has a backend service you will need to host this independent of twitch. Twitch will not host your backend files for you, so please make sure that your backend code is deployed somewhere that the hosted front end can talk to it.
+1. Unlike your backend, twitch will host your front end assets for you. To upload your front end files, zip the contents of your `dist` directory only. **Note that the contents of the `dist` directory must be at the root of your zip file. If you have trouble viewing your extension please make sure that your files are not wrapped in a parent folder at the root of the zip file.**
+1. From the [extension console dashboard](https://dev.twitch.tv/console/extensions/) for your project, navigate to the Files tab and upload your zip file. This could take a few minutes if your project is large.
+1. Once your front end files are uploaded, go back to the Status tab and click on "Move To Hosted Test".
+1. You should now be able to add your extension to your twitch page and see what it looks like on your page.
