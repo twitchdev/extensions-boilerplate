@@ -1,4 +1,4 @@
-# Native React Boilerplate
+# Twitch Extension React Boilerplate
 
 ## Requirements
 
@@ -10,7 +10,15 @@ There is only one requirement to use this template.
 
 ### [Developer Rig](https://dev.twitch.tv/docs/extensions/rig/) Usage
 
-If you are using the developer rig and have used this as your basis for your extension, please ignore the below steps- the developer rig has taken care of it for you! 
+If you are using the developer rig and have used this as your basis for your extension, please ignore the below steps- the developer rig has taken care of it for you! The full steps are: 
+
+1.  Click on Add Project, then Create New Project
+2.  Either create a new extension or use an existing one and hit "Next"
+3.  Choose "Use boilerplate code" under "Add Code to your Project" and hit "Next"
+4.  Let the boilerplate code download, install dependencies, and complete. Once finished, hit "Get Started"
+5.  Click on "Run Frontend" and add views in the "Extension Views" tab
+6.  Accept any certificate errors, as the certificate is self-signed
+7.  You can now make changes in real-time and it'll update in all views!
 
 ### Please note that HTTPS only works with the Developer Rig version 1.1.4 and above. 
 
@@ -28,14 +36,26 @@ To use this, simply clone the repository into the folder of your choice.
 
 For example, to clone this into a `<repo name here>` folder, simply run the following in a command line interface: 
 ```
-git clone <repo name to be fixed later>
+git clone https://github.com/twitchdev/extensions-boilerplate
 ```
 
 Next, do the following: 
 
 1. Change directories into the cloned folder.
 2. Run `npm install` to install all prerequisite packages needed to run the template. 
-3. Run `npm run start` to run the sample. If everything works, you should be be able to go to the developer rig, create a panel view, and see `Hello world!`
+3. Run `npm run start` to run the sample. By default, you should be be able to go to `https://localhost:8080/` and have the page show the instructions to get up and running. This README includes that same information. This sample requires it be run on https://twitch.tv/ or the Twitch Developer Rig to utilize the Twitch Extension Helper.  
+   1. It should also give a certificate error- this is expected, as the sample uses a self-signed certificate to support HTTPS. 
+   2. If you had to change the port (likely due to a port conflict), update the port in the URL above. 
+
+#### Loading the Sample on Twitch
+
+1.  Now that you have the boilerplate loaded and installed, you'll need two things first.
+    *   Extension made on [the Twitch Developer Site](https://dev.twitch.tv/console)
+    *   The extension installed on your own channel. This can be done in the "Invite Only" section of the Extension Store, where you'll find your extension listed.
+2.  Once you've installed your extension, you'll need to activate the extension and add it to any of the available slots: Panel, Component, or Overlay. Do note that Component or Overlay extensions require you to be live when testing.
+3.  Go to your channel on Twitch and you'll have to click on "Accept" on the extension. It should load.
+4.  If it doesn't load, don't fret! Simply visit the URL for the view (https://localhost:8080/panel.html for a panel view, for example) and accept the certificate. Go back to your channel page on Twitch and you'll be good to go!
+
 
 ## Usage
 
