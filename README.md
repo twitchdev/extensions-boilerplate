@@ -6,14 +6,6 @@ There is only one requirement to use this template.
 
 * Node.JS LTS or greater. 
 
-You may also find that using `yarn` is easier than `npm`, so we do recommend installing that as well by running: 
-```
-npm i -g yarn
-``` 
-in an elevated command line interface.
-
-If you opt to use `npm`, simply replace all mentions of `yarn` below with `npm run`, such as `npm run start` or `npm run build`. 
-
 ## First time Usage
 
 ### [Developer Rig](https://dev.twitch.tv/docs/extensions/rig/) Usage
@@ -34,7 +26,7 @@ If you are using a version below that, please either upgrade or disable HTTP. To
 If you're wanting to develop this locally, use the below instructions. 
 To use this, simply clone the repository into the folder of your choice. 
 
-For example, to clone this into a `<repo name here>` folder, simply run the following in a commandline interface: 
+For example, to clone this into a `<repo name here>` folder, simply run the following in a command line interface: 
 ```
 git clone <repo name to be fixed later>
 ```
@@ -103,7 +95,7 @@ The `/bin` folder holds the cert generation script.
 
 ### conf 
 
-The `/conf` folder holds the generated certs after the cert generation script runs. If this folder gets emptied, rerun `yarn cert`. 
+The `/conf` folder holds the generated certs after the cert generation script runs. If this folder gets emptied, rerun `npm run cert`. 
 
 ### dist
 
