@@ -34,7 +34,7 @@ If you are using a version below that, please either upgrade or disable HTTP. To
 If you're wanting to develop this locally, use the below instructions. 
 To use this, simply clone the repository into the folder of your choice. 
 
-For example, to clone this into a `<repo name here>` folder, simply run the following in a command line interface: 
+For example, to clone this into a `extensions-boilerplate` folder, simply run the following in a command line interface: 
 ```
 git clone https://github.com/twitchdev/extensions-boilerplate
 ```
