@@ -16,9 +16,18 @@ If you opt to use `npm`, simply replace all mentions of `yarn` below with `npm r
 
 ## First time Usage
 
-### [Developer Rig](https://github.com/twitchdev/developer-rig) Usage
+### [Developer Rig](https://dev.twitch.tv/docs/extensions/rig/) Usage
 
 If you are using the developer rig and have used this as your basis for your extension, please ignore the below steps- the developer rig has taken care of it for you! 
+
+### Please note that HTTPS only works with the Developer Rig version 1.1.4 and above. 
+
+If you are using a version below that, please either upgrade or disable HTTP. To do so:
+
+1. Go into `/webpack.config.js`
+2. Update `config.devServer.https = true` to `config.devServer.https = false`
+3. On the [Twitch Developer Console](https://dev.twitch.tv/console), make sure to update the Asset Hosting path for your extension to use http instead. 
+4. Refresh your manifest in the Developer Rig and recreate your views. 
 
 ### Local Development
 
