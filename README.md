@@ -89,17 +89,9 @@ When you are happy with how your extension looks locally, you can then move into
 
 The file structure in the template is laid out with the following: 
 
-### bin
-
-The `/bin` folder holds the cert generation script. 
-
-### conf 
-
-The `/conf` folder holds the generated certs after the cert generation script runs. If this folder gets emptied, rerun `npm run cert`. 
-
 ### dist
 
-`/dist` holds the final JS files after building. You can simply zip up the contents of the folder to upload to Twitch to move to Hosted Test. 
+`/dist` holds the final JS files after building. You can simply zip up the contents of the folder to upload to Twitch to move to Hosted Test, as noted above.
 
 ### public
 
