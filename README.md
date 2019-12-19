@@ -35,8 +35,7 @@ Next, do the following:
 
 1. Change directories into the cloned folder.
 2. Run `npm install` to install all prerequisite packages needed to run the template. 
-3. Run `npm run cert` to generate the needed certificates. This allows the server to be run over HTTPS vs. HTTP.
-4. Run `npm run start` to run the sample. If everything works, you should be be able to go to the developer rig, create a panel view, and see `Hello world!`
+3. Run `npm run start` to run the sample. If everything works, you should be be able to go to the developer rig, create a panel view, and see `Hello world!`
 
 ## Usage
 
