@@ -3,7 +3,6 @@
   - [Requirements](#requirements)
   - [First time Usage](#first-time-usage)
     - [Developer Rig Usage](#developer-rig-usage)
-      - [Please note that HTTPS only works with the Developer Rig version 1.1.4 and above.](#please-note-that-https-only-works-with-the-developer-rig-version-114-and-above)
     - [Local Development](#local-development)
       - [Loading the Sample on Twitch](#loading-the-sample-on-twitch)
   - [Moving to Hosted Test (and beyond!)](#moving-to-hosted-test-and-beyond)
@@ -28,7 +27,7 @@ There are two ways to develop extensions- the first is the [Developer Rig](#deve
 
 If you are using the [Developer Rig](https://dev.twitch.tv/docs/extensions/rig/) and have used this as your basis for your extension, this is easy to start with. The full steps are: 
 
-1.  Click on Add Project, then Create New Project
+1.  Click on Add Project, then Create Project
 2.  Either create a new extension or use an existing one and hit "Next"
 3.  Choose "Use boilerplate code" under "Add Code to your Project" and hit "Next"
 4.  Let the boilerplate code download, install dependencies, and complete. Once finished, hit "Get Started"
@@ -36,12 +35,12 @@ If you are using the [Developer Rig](https://dev.twitch.tv/docs/extensions/rig/)
 6.  Accept any certificate errors, as the certificate is self-signed
 7.  You can now make changes in real-time and it'll update in all views!
 
-#### Please note that HTTPS only works with the Developer Rig version 1.1.4 and above. 
+**Please note that HTTPS only works with the Developer Rig version 1.1.4 and above.** 
 
 If you are using a version below that, please either upgrade the Developer Rig (by either auto-updating or reinstalling the Developer Rig) or disable HTTPS. To disable HTTPS:
 
-1. Go into `/webpack.config.js`
-2. Update `config.devServer.https = true` to `config.devServer.https = false`
+1. Go into `/webpack.config.js`.
+2. Update `config.devServer.https = true` to `config.devServer.https = false`.
 3. On the [Twitch Developer Console](https://dev.twitch.tv/console), make sure to update the Asset Hosting path for your extension to use http instead. 
 4. Refresh your manifest in the Developer Rig and recreate your views. 
 
@@ -66,7 +65,7 @@ Next, do the following:
 #### Loading the Sample on Twitch
 
 1.  Now that you have the boilerplate loaded and installed, you'll need two things first.
-    *   Extension made on [the Twitch Developer Site](https://dev.twitch.tv/console)
+    *   Extension made on [the Twitch Developer Site](https://dev.twitch.tv/console).
     *   The extension installed on your own channel. This can be done in the "Invite Only" section of the Extension Store, where you'll find your extension listed.
 2.  Once you've installed your extension, you'll need to activate the extension and add it to any of the available slots: Panel, Component, or Overlay. Do note that Component or Overlay extensions require you to be live when testing.
 3.  Go to your channel on Twitch and you'll have to click on "Accept" on the extension. It should load.
@@ -77,7 +76,7 @@ Next, do the following:
 When you are happy with how your extension looks locally, you can then move into Hosted Test on Twitch. 
 
 1. Twitch will host your frontend assets for you. To upload your frontend files, zip the _contents_ of your `dist` directory after running `npm run build`. **Note that the contents of the `dist` directory must be at the root of your zip file. If you have trouble viewing your extension please make sure that your files are not wrapped in a parent folder at the root of the zip file.**
-   1. For OSX, you can run `zip -r dist.zip dist/*` in the root of this folder to generate a properly formatted zip file. 
+   1. For OSX, you can run `zip -r ../dist.zip dist/*` in the `dist` folder to generate a properly formatted zip file. 
    2. For Windows, you can select all files in the folder and add to compressed archive. 
 2. From the [developer dashboard](https://dev.twitch.tv/console/extensions/) for your extension, navigate to the Files tab and upload your zip file. This could take a few minutes if your project is large.
 3. Once your front end files are uploaded, go back to the Status tab and click on "Move To Hosted Test".
@@ -144,10 +143,9 @@ components\
 --\App.js
 --\App.test.js
 --\App.css
--\Authentication\
---\Authentication.js
 ...
--\static\
---\images
----\sample_image.jpeg
+-\util\
+--\Authentication\
+---\Authentication.js
+---\Authentication.test.js
 ```
