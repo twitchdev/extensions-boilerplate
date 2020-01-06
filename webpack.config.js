@@ -68,7 +68,7 @@ module.exports = (_env,argv)=> {
     //entry points for webpack- remove if not used/needed
     entry,
     optimization: {
-      minimize: false, // neccessary to pass Twitch's review process
+      minimize: false, // this setting is default to false to pass review more easily. you can opt to set this to true to compress the bundles, but also expect an email from the review team to get the full source otherwise. 
     },
     module: {
       rules: [
@@ -80,6 +80,14 @@ module.exports = (_env,argv)=> {
         {
           test: /\.css$/,
           use: [ 'style-loader', 'css-loader' ]
+        },
+        {
+          test: /\.scss$/,
+          use: [
+              "style-loader", // creates style nodes from JS strings
+              "css-loader", // translates CSS into CommonJS
+              "sass-loader", // compiles Sass to CSS, using Node Sass by default
+          ]
         },
         {
           test: /\.(jpe?g|png|gif|svg)$/i, 
