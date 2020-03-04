@@ -12,7 +12,8 @@ export default class Authentication{
             opaque_id,
             user_id:false,
             isMod:false,
-            role:""
+            role:"",
+            channel_id:""
         }
     }
 
@@ -40,12 +41,17 @@ export default class Authentication{
         return this.state.opaque_id
     }
     
+    getChannelId(){
+        return this.state.channel_id
+    }
+
     // set the token in the Authentication componenent state
     // this is naive, and will work with whatever token is returned. under no circumstances should you use this logic to trust private data- you should always verify the token on the backend before displaying that data. 
     setToken(token,opaque_id){
         let isMod = false
         let role = ""
         let user_id = ""
+        let channel_id = ""
 
         try {
             let decoded = jwt.decode(token)
@@ -56,6 +62,7 @@ export default class Authentication{
 
             user_id = decoded.user_id
             role = decoded.role
+            channel_id = decoded.channel_id
         } catch (e) {
             token=''
             opaque_id=''
@@ -66,7 +73,8 @@ export default class Authentication{
             opaque_id,
             isMod,
             user_id,
-            role
+            role,
+            channel_id
         }
     }
 
