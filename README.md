@@ -76,7 +76,7 @@ Next, do the following:
 When you are happy with how your extension looks locally, you can then move into Hosted Test on Twitch. 
 
 1. Twitch will host your frontend assets for you. To upload your frontend files, zip the _contents_ of your `dist` directory after running `npm run build`. **Note that the contents of the `dist` directory must be at the root of your zip file. If you have trouble viewing your extension please make sure that your files are not wrapped in a parent folder at the root of the zip file.**
-   1. For OSX, you can run `zip -r ../dist.zip dist/*` in the `dist` folder to generate a properly formatted zip file. 
+   1. For OSX, you can run `zip -r ../dist.zip *` in the `dist` folder to generate a properly formatted zip file. 
    2. For Windows, you can select all files in the folder and add to compressed archive. 
 2. From the [developer dashboard](https://dev.twitch.tv/console/extensions/) for your extension, navigate to the Files tab and upload your zip file. This could take a few minutes if your project is large.
 3. Once your front end files are uploaded, go back to the Status tab and click on "Move To Hosted Test".
