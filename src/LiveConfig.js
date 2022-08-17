@@ -1,8 +1,5 @@
-import React from "react"
-import ReactDOM from "react-dom"
-import LiveConfigPage from "./components/LiveConfigPage/LiveConfigPage"
+import React from "react";
+import { createRoot } from "react-dom/client";
+import LiveConfigPage from "./components/LiveConfigPage/LiveConfigPage";
 
-ReactDOM.render(
-  <LiveConfigPage />,
-  document.getElementById("root")
-)
+createRoot(document.getElementById("root")).render(<LiveConfigPage />);
