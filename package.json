@@ -27,7 +27,7 @@
     "html-webpack-plugin": "^4.0.0-beta.11",
     "isomorphic-fetch": "^3.0.0",
     "jest": "^24.9.0",
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.3",
     "regenerator-runtime": "^0.13.3",
     "sass-loader": "^7.3.1",
     "style-loader": "^0.21.0",
@@ -36,7 +36,7 @@
     "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
-    "core-js": "^3.5.0",
+    "core-js": "^3.25.2",
     "jsonwebtoken": "^8.5.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
